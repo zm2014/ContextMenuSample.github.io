@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Context Menu Sample</title>
+    <link rel="stylesheet" href="css/asset-browser.css" />
+    <script type="text/javascript" src="3rdparty/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="3rdparty/angular/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/asset-browser-controller.js"></script>
+    <script type="text/javascript" src="js/contextmenu-service.js"></script>
+    <script type="text/javascript" src="js/my-contextmenu.js"></script>
+</head>
+<body ng-app="app" oncontextmenu="return false;">
+    <h1>Context Menu Demo</h1>
+    
+    <div id="contextmenuDiv"></div>
+	
+    <div id="asset-browser-view" ng-controller="assetBrowserController">
+        <div class="list-item" ng-repeat="item in items" >
+            <div my-contextmenu menu-id="#contextmenuDiv" menu-options="oddNumberOptions" ng-if="item.type == 'Odd < 5'" >
+                Odd Number < 5 --> {{item.name}}
+            </div>
+            <div my-contextmenu menu-id="#contextmenuDiv" menu-options="evenNumberOptions" menu-data=item.name ng-if="item.type == 'Even < 5'">
+                Even Number < 5 --> {{item.name}}
+            </div>
+            <div ng-if="item.type != 'Odd < 5' && item.type != 'Even < 5'">
+                <!--This one has no munu option set-->
+                Other --> {{item.name}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

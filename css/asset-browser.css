@@ -1,0 +1,31 @@
+#contextmenuDiv {
+    float: right;
+    position: absolute;
+    z-index: +1;
+    border: 2px solid #4d4d4d;
+    background: white;
+    color: black;
+    font-size: 16px;
+    left: -1000px;
+    top: -1000px;
+}
+
+hr {
+    border-color: #595959;
+}
+
+ul {
+    list-style-type: none;
+    padding-top: -20px;
+    padding-bottom: -20px;
+    padding-left: 0; 
+    font-size: 13px;
+}
+
+a {
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
